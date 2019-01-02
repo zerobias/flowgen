@@ -43,6 +43,6 @@
     "prettier": "prettier  --write \"{src,types}/**/*.js\"",
     "compile": "babel --out-dir lib ./src",
     "compile:watch": "npm run compile -- -w",
-    "test": "jest"
+    "test": "jest --config=jest.config.js"
   }
 }
