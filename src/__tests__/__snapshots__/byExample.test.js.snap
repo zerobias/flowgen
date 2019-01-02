@@ -149,14 +149,14 @@ declare type fastify$ServerOptionsAsSecure = {
 } & fastify$ServerOptions;
 
 declare type fastify$ServerOptionsAsHttp = {
-  http2?: undefined
+  http2?: false
 } & fastify$ServerOptions;
 
 declare type fastify$ServerOptionsAsSecureHttp = {} & fastify$ServerOptionsAsHttp &
   fastify$ServerOptionsAsSecure;
 
 declare type fastify$ServerOptionsAsHttp2 = {
-  http2: undefined
+  http2: true
 } & fastify$ServerOptions;
 
 declare type fastify$ServerOptionsAsSecureHttp2 = {} & fastify$ServerOptionsAsHttp2 &

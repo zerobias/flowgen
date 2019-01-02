@@ -573,7 +573,6 @@ declare namespace fastify {
 export = fastify;
 `
   const result = compiler.compileDefinitionString(ts);
-  console.log(beautify(result))
+  //console.log(beautify(result))
   expect(beautify(result)).toMatchSnapshot();
 })
-

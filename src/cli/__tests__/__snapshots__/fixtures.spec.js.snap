@@ -565,7 +565,7 @@ number: number,
 /**
  * The state for the PR
 */
-state: 'closed' | 'open' | 'locked' | 'merged',
+state: \\"closed\\" | \\"open\\" | \\"locked\\" | \\"merged\\",
 
 /**
  * Has the PR been locked to contributors only?
@@ -718,7 +718,7 @@ login: string,
 /**
  * Whether the user is an org, or a user
 */
-type: 'User' | 'Organization',
+type: \\"User\\" | \\"Organization\\",
 
 /**
  * The url for a users's image
@@ -842,7 +842,7 @@ commit_id?: string,
  * The state of the review
  * APPROVED, REQUEST_CHANGES, COMMENT or PENDING
 */
-state?: 'APPROVED' | 'REQUEST_CHANGES' | 'COMMENT' | 'PENDING'
+state?: \\"APPROVED\\" | \\"REQUEST_CHANGES\\" | \\"COMMENT\\" | \\"PENDING\\"
 } 
 	
 /**

@@ -6,3 +6,9 @@ exports[`should handle bounded polymorphism 1`] = `
 `;
 
 exports[`should handle maybe & nullable type 1`] = `"declare var a: string | null | void;"`;
+
+exports[`should handle true and false types in single type true 1`] = `"declare var a: true;"`;
+
+exports[`should handle true and false types in single type true 2`] = `"declare var a: false;"`;
+
+exports[`should handle true and false types in union 1`] = `"declare var a: true | false;"`;
