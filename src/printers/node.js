@@ -154,7 +154,7 @@ export const printType = (type: RawNode) => {
 
     case SyntaxKind.IntersectionType:
       return type.types.map(printType).join(" & ");
-      
+
     case SyntaxKind.LiteralType:
       return type.value;
 
@@ -201,7 +201,10 @@ export const printType = (type: RawNode) => {
 
     case SyntaxKind.ParenthesizedType:
       return `(${printType(type.type)})`;
+    case SyntaxKind.ObjectKeyword:
+      return '/*ObjectKeyword*/ {}'
   }
+  console.log(type)
 
   const output = `"NO PRINT IMPLEMENTED: ${type.kind}"`;
   console.log(output);
