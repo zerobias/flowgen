@@ -13,8 +13,13 @@ export const printType = (type: RawNode) => {
     case "FunctionTypeAnnotation":
       return printers.functions.functionType(type);
 
-    case "LastNodeType":
-      return `"${type.literal.text}"`;
+    case 'LastTypeNode':
+    case "LastNodeType": //TODO looks like a typo
+      switch (type.literal.kind) {
+        case 'TrueKeyword': return 'true'
+        case 'FalseKeyword': return 'false'
+        default: return `"${type.literal.text}"`
+      }
   }
 
   const keywordPrefix =
@@ -29,9 +34,11 @@ export const printType = (type: RawNode) => {
     case SyntaxKind.AnyKeyword:
     case SyntaxKind.NumberKeyword:
     case SyntaxKind.BooleanKeyword:
+    case SyntaxKind.TrueKeyword:
+    case SyntaxKind.FalseKeyword:
     case SyntaxKind.NullKeyword:
     case SyntaxKind.UndefinedKeyword:
-      return printers.basics.print(type.kind);
+      return printers.basics.print(type.kind)
 
     case SyntaxKind.FunctionType:
       return printers.functions.functionType(type);

@@ -5,6 +5,8 @@ const types = {
   AnyKeyword: "any",
   NumberKeyword: "number",
   BooleanKeyword: "boolean",
+  FalseKeyword: "false",
+  TrueKeyword: "true",
   NullKeyword: "null",
   UndefinedKeyword: "void",
 };
