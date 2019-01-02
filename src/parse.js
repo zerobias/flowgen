@@ -157,6 +157,6 @@ export function getMembersFromNode(node: any) {
   if (node.members) {
     return node.members;
   }
-
-  console.log("NO MEMBERS_", node);
+  console.log("NO MEMBERS_", node.type);
+  return []
 }
