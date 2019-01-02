@@ -7,7 +7,7 @@ import printers from "./index";
 export const moduleExports = (node: RawNode): string => {
   let name = printers.node.printType(node.expression);
 
-  return `declare module.exports: typeof ${name}`;
+  return `declare module.exports: typeof ${name}\n`;
 };
 
 export const exporter = (node: RawNode): string => {
