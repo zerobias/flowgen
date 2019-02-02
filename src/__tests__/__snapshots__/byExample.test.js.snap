@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should work with fastify 1`] = `
-"declare module.exports: typeof fastify;
+"import * as http from \\"http\\";
+import * as http2 from \\"http2\\";
+import * as https from \\"https\\";
+import * as tls from \\"tls\\";
+import * as pino from \\"pino\\";
+declare function fastify<HttpServer, HttpRequest, HttpResponse>(
+  opts?: fastify$ServerOptions
+): fastify$FastifyInstance<HttpServer, HttpRequest, HttpResponse>;
 declare type fastify$Plugin<HttpServer, HttpRequest, HttpResponse, T> = (
   instance: fastify$FastifyInstance<HttpServer, HttpRequest, HttpResponse>,
   opts: T,
@@ -254,9 +261,9 @@ declare interface fastify$HTTPInjectOptions {
   url: string;
   method?: fastify$HTTPMethod;
   authority?: string;
-  headers?: /*ObjectKeyword*/ {};
+  headers?: { [key: string]: any };
   remoteAddress?: string;
-  payload?: string | /*ObjectKeyword*/ {} | Buffer | NodeJS.ReadableStream;
+  payload?: string | { [key: string]: any } | Buffer | NodeJS.ReadableStream;
   simulate?: {
     end?: boolean,
     split?: boolean,
@@ -274,12 +281,12 @@ declare interface fastify$HTTPInjectResponse {
     req: NodeJS.ReadableStream,
     res: http.ServerResponse
   };
-  headers: /*ObjectKeyword*/ {};
+  headers: { [key: string]: any };
   statusCode: number;
   statusMessage: string;
   payload: string;
   rawPayload: Buffer;
-  trailers: /*ObjectKeyword*/ {};
+  trailers: { [key: string]: any };
 }
 
 /**
@@ -869,7 +876,7 @@ The interface is synchronous, and, as such, the listeners do not get passed a ca
   /**
    * Create a shared schema
    */
-  addSchema(schema: /*ObjectKeyword*/ {}): fastify$FastifyInstance<
+  addSchema(schema: { [key: string]: any }): fastify$FastifyInstance<
     HttpServer,
     HttpRequest,
     HttpResponse
@@ -923,5 +930,6 @@ The interface is synchronous, and, as such, the listeners do not get passed a ca
    */
   printRoutes(): string;
 }
+declare module.exports: typeof fastify;
 "
 `;
