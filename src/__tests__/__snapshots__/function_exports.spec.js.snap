@@ -25,3 +25,9 @@ exports[`should remove this annotation from functions 1`] = `
 "declare function addClickListener(onclick: (e: Event) => void): void;
 "
 `;
+
+exports[`should support function overloading 1`] = `
+"declare export function overload(param: string): void;
+declare export function overload(param: number): number;
+"
+`;

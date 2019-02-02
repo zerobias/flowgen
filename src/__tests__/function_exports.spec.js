@@ -20,3 +20,10 @@ it("should remove this annotation from functions", () => {
   const result = compiler.compileDefinitionString(ts);
   expect(beautify(result)).toMatchSnapshot();
 });
+
+it("should support function overloading", () => {
+  const ts = `export function overload(param: string): void;
+export function overload(param: number): number;`;
+  const result = compiler.compileDefinitionString(ts);
+  expect(beautify(result)).toMatchSnapshot();
+});
